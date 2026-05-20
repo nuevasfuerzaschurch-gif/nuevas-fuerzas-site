@@ -1,0 +1,8 @@
+{
+  "name": "nuevas-fuerzas-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "mkdir -p dist && cp -R version-inicial/. dist/"
+  }
+}
