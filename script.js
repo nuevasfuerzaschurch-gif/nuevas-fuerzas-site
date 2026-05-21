@@ -53,7 +53,9 @@ contactForm.addEventListener("submit", (event) => {
 
   const recipient = CONTACT_EMAIL.trim();
   const mailto = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  window.location.href = mailto;
+  const mailLink = document.createElement("a");
+  mailLink.href = mailto;
+  mailLink.click();
 
   formStatus.textContent = recipient
     ? "Abrimos tu aplicación de correo con el mensaje preparado."
