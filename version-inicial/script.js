@@ -66,22 +66,28 @@ testimonyForm.addEventListener("submit", async (event) => {
 
   const submitButton = testimonyForm.querySelector('button[type="submit"]');
   const formData = new FormData(testimonyForm);
+  const formSubmitEndpoint = testimonyForm.action.replace("https://formsubmit.co/", "https://formsubmit.co/ajax/");
   const payload = {
-    name: formData.get("name"),
-    email: formData.get("email"),
-    testimony: formData.get("testimony"),
-    consent: formData.get("consent") === "on",
-    publicName: formData.get("publicName") === "si",
+    name: formData.get("name") || "No compartido",
+    email: formData.get("email") || "",
+    "Correo electrónico": formData.get("email") || "No compartido",
+    Testimonio: formData.get("testimony"),
+    "Autorización para publicar": formData.get("consent") === "on" ? "Sí" : "No",
+    "Deseo que mi nombre aparezca públicamente": formData.get("publicName") === "si" ? "Sí" : "No",
+    _subject: "Nuevo Testimonio - Nuevas Fuerzas",
+    _template: "table",
+    _captcha: "false",
   };
 
   testimonyStatus.textContent = "Enviando tu testimonio...";
   submitButton.disabled = true;
 
   try {
-    const response = await fetch("/api/testimonio", {
+    const response = await fetch(formSubmitEndpoint, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Accept: "application/json",
       },
       body: JSON.stringify(payload),
     });
@@ -91,7 +97,7 @@ testimonyForm.addEventListener("submit", async (event) => {
     }
 
     testimonyForm.reset();
-    testimonyStatus.textContent = "Gracias. Recibimos tu testimonio y lo revisaremos con cuidado pastoral antes de publicarlo.";
+    testimonyStatus.textContent = "Gracias por compartir tu testimonio. Lo revisaremos antes de publicarlo.";
   } catch (error) {
     testimonyStatus.textContent = "No pudimos enviarlo ahora. Por favor intenta nuevamente en unos minutos.";
   } finally {

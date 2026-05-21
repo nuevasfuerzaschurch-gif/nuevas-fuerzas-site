@@ -72,13 +72,16 @@ Después del deploy:
 
 ## Envío de testimonios
 
-El formulario de testimonios usa una función serverless de Vercel en `/api/testimonio`.
-
-Para que pueda enviar correos, configura estas variables en Vercel:
+El formulario de testimonios usa FormSubmit con este endpoint:
 
 ```txt
-RESEND_API_KEY=tu_api_key_de_resend
-TESTIMONY_FROM=Nuevas Fuerzas <correo@tudominioverificado.com>
+https://formsubmit.co/testimoniosnuevasfuerzas@gmail.com
+```
+
+Para mantener a la persona dentro de la misma página, el JavaScript envía el formulario por AJAX usando:
+
+```txt
+https://formsubmit.co/ajax/testimoniosnuevasfuerzas@gmail.com
 ```
 
 Los testimonios se envían a:
@@ -88,3 +91,5 @@ testimoniosnuevasfuerzas@gmail.com
 ```
 
 El testimonio no se publica automáticamente en la web.
+
+La primera vez que se use FormSubmit puede llegar un correo de confirmación al buzón de testimonios.
