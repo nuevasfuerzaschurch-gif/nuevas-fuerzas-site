@@ -338,8 +338,12 @@ h3 {
   align-items: center;
   justify-content: center;
   padding: 13px 18px;
+  border: 0;
   border-radius: 8px;
+  cursor: pointer;
+  font: inherit;
   font-weight: 800;
+  text-decoration: none;
   transition:
     transform 180ms ease,
     background 180ms ease,
@@ -563,6 +567,87 @@ time {
   color: var(--white);
   background: rgba(255, 255, 255, 0.08);
   border-color: rgba(255, 255, 255, 0.14);
+}
+
+.testimony-form-panel {
+  max-height: 0;
+  margin-top: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition:
+    max-height 260ms ease,
+    margin-top 260ms ease,
+    opacity 220ms ease,
+    transform 220ms ease;
+}
+
+.testimony-form-panel.is-open {
+  max-height: 760px;
+  margin-top: 18px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.testimony-form {
+  display: grid;
+  gap: 12px;
+}
+
+.testimony-form label,
+.testimony-choice legend {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.testimony-form input,
+.testimony-form textarea {
+  width: 100%;
+  margin-top: 7px;
+  padding: 12px 13px;
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  font: inherit;
+}
+
+.testimony-form textarea {
+  resize: vertical;
+}
+
+.testimony-check,
+.testimony-choice label {
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+}
+
+.testimony-check input,
+.testimony-choice input {
+  width: auto;
+  margin: 2px 0 0;
+}
+
+.testimony-choice {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.testimony-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.testimony-status {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.92rem;
 }
 
 blockquote {

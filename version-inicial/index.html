@@ -258,10 +258,46 @@
                 "Tu testimonio puede animar a otros a buscar nuevas fuerzas en Cristo."
               </blockquote>
               <figcaption>
-                <a class="button button-primary" href="mailto:testimoniosnuevasfuerzas@gmail.com?subject=Testimonio%20-%20Nuevas%20Fuerzas&body=Hola%20Nuevas%20Fuerzas,%20quiero%20compartir%20mi%20testimonio:%0A%0A">
-                  Enviar testimonio
-                </a>
+                <button class="button button-primary" type="button" aria-expanded="false" aria-controls="testimony-form-panel" data-testimony-toggle>
+                  Compartir mi testimonio
+                </button>
               </figcaption>
+              <div class="testimony-form-panel" id="testimony-form-panel" hidden data-testimony-panel>
+                <form class="testimony-form" data-testimony-form>
+                  <label>
+                    Nombre (opcional)
+                    <input name="name" type="text" autocomplete="name" />
+                  </label>
+                  <label>
+                    Correo electrónico (opcional)
+                    <input name="email" type="email" autocomplete="email" />
+                  </label>
+                  <label>
+                    Testimonio
+                    <textarea name="testimony" rows="5" required></textarea>
+                  </label>
+                  <label class="testimony-check">
+                    <input name="consent" type="checkbox" required />
+                    <span>Autorizo a Nuevas Fuerzas a publicar este testimonio</span>
+                  </label>
+                  <fieldset class="testimony-choice">
+                    <legend>Deseo que mi nombre aparezca públicamente</legend>
+                    <label>
+                      <input name="publicName" type="radio" value="si" />
+                      Sí
+                    </label>
+                    <label>
+                      <input name="publicName" type="radio" value="no" checked />
+                      No
+                    </label>
+                  </fieldset>
+                  <div class="testimony-actions">
+                    <button class="button button-primary" type="submit">Enviar testimonio</button>
+                    <button class="button button-secondary" type="button" data-testimony-close>Cerrar</button>
+                  </div>
+                  <p class="testimony-status" data-testimony-status aria-live="polite"></p>
+                </form>
+              </div>
             </figure>
           </div>
         </div>

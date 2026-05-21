@@ -69,3 +69,22 @@ Después del deploy:
 2. Ve a `Settings` > `Domains`.
 3. Agrega tu dominio.
 4. Sigue las instrucciones DNS que Vercel muestre para tu proveedor de dominio.
+
+## Envío de testimonios
+
+El formulario de testimonios usa una función serverless de Vercel en `/api/testimonio`.
+
+Para que pueda enviar correos, configura estas variables en Vercel:
+
+```txt
+RESEND_API_KEY=tu_api_key_de_resend
+TESTIMONY_FROM=Nuevas Fuerzas <correo@tudominioverificado.com>
+```
+
+Los testimonios se envían a:
+
+```txt
+testimoniosnuevasfuerzas@gmail.com
+```
+
+El testimonio no se publica automáticamente en la web.
