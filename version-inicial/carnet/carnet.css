@@ -1,0 +1,287 @@
+:root {
+  --ink: #271c16;
+  --muted: #6f6258;
+  --paper: #fffaf3;
+  --soft: #f4eadb;
+  --clay: #a14f35;
+  --clay-dark: #713721;
+  --olive: #596044;
+  --gold: #d8a85d;
+  --deep: #1c1714;
+  --white: #ffffff;
+  --shadow: 0 22px 60px rgba(39, 28, 22, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--ink);
+  background:
+    linear-gradient(rgba(255, 250, 243, 0.9), rgba(244, 234, 219, 0.94)),
+    url("https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=1800&q=85")
+      center / cover fixed;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.credential-page {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 28px 16px;
+}
+
+.credential-shell {
+  width: min(960px, 100%);
+}
+
+.credential-card {
+  overflow: hidden;
+  border: 1px solid rgba(39, 28, 22, 0.12);
+  border-radius: 18px;
+  background: rgba(255, 250, 243, 0.94);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+}
+
+.credential-hero {
+  position: relative;
+  display: grid;
+  gap: 28px;
+  padding: 30px;
+  color: var(--white);
+  background:
+    linear-gradient(135deg, rgba(28, 23, 20, 0.96), rgba(89, 96, 68, 0.9)),
+    url("https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1600&q=82")
+      center / cover;
+}
+
+.credential-brand {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-mark {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  flex: 0 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+}
+
+.brand-lockup strong,
+.brand-lockup small {
+  display: block;
+}
+
+.brand-lockup strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.brand-lockup small {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.credential-status {
+  padding: 7px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.credential-person {
+  display: grid;
+  gap: 22px;
+  align-items: end;
+}
+
+.credential-photo {
+  display: grid;
+  width: 132px;
+  height: 132px;
+  place-items: center;
+  overflow: hidden;
+  border: 4px solid rgba(255, 255, 255, 0.72);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(216, 168, 93, 0.42), transparent 32%),
+    rgba(255, 255, 255, 0.12);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.22);
+}
+
+.credential-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.credential-initials {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+}
+
+.credential-kicker {
+  margin: 0 0 10px;
+  color: var(--gold);
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.credential-name {
+  margin: 0;
+  max-width: 680px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.4rem, 9vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+.credential-type {
+  display: inline-flex;
+  margin-top: 18px;
+  padding: 9px 13px;
+  border-radius: 8px;
+  background: var(--clay);
+  color: var(--white);
+  font-weight: 900;
+}
+
+.credential-details {
+  display: grid;
+  gap: 14px;
+  padding: 24px;
+}
+
+.detail-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.detail-item {
+  padding: 18px;
+  border: 1px solid rgba(39, 28, 22, 0.1);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.detail-item span {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--clay);
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.detail-item strong {
+  font-size: 1.05rem;
+}
+
+.credential-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.credential-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 4px;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 18px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--clay);
+  color: var(--white);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+  text-decoration: none;
+  transition:
+    transform 180ms ease,
+    background 180ms ease;
+}
+
+.button:hover {
+  background: var(--clay-dark);
+  transform: translateY(-2px);
+}
+
+@media (min-width: 720px) {
+  .credential-page {
+    padding: 48px 24px;
+  }
+
+  .credential-hero {
+    padding: 42px;
+  }
+
+  .credential-person {
+    grid-template-columns: auto 1fr;
+  }
+
+  .credential-details {
+    padding: 32px;
+  }
+
+  .detail-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
