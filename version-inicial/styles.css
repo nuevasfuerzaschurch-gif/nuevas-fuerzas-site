@@ -506,6 +506,31 @@ h3 {
   background: var(--soft);
 }
 
+.location-link {
+  display: inline-block;
+  color: var(--clay);
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.location-map {
+  overflow: hidden;
+  height: 220px;
+  margin: 18px 0 22px;
+  border: 1px solid rgba(39, 28, 22, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 10px 32px rgba(39, 28, 22, 0.06);
+}
+
+.location-map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 .schedule-list article {
   display: grid;
   gap: 4px;
@@ -758,6 +783,14 @@ figcaption {
 .site-footer a {
   display: block;
   padding: 6px 0;
+}
+
+.site-footer .footer-address-link {
+  display: inline;
+  padding: 0;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
 }
 
 .footer-symbols {
