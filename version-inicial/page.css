@@ -72,6 +72,11 @@
   padding: 72px 0;
 }
 
+.page-intro-section {
+  margin-top: -42px;
+  padding-top: 0;
+}
+
 .page-section-soft {
   background: var(--soft);
 }
@@ -103,8 +108,72 @@
   color: var(--muted);
 }
 
+.page-intro-layout,
+.page-feature-layout,
+.page-duo,
+.build-panel {
+  display: grid;
+  gap: 18px;
+}
+
+.page-intro-card,
+.visit-snapshot,
+.build-panel {
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.page-intro-card {
+  padding: 28px;
+  background: var(--paper);
+  border: 1px solid rgba(39, 28, 22, 0.09);
+}
+
+.page-intro-card h2 {
+  max-width: 720px;
+}
+
+.visit-snapshot {
+  padding: 24px;
+  color: var(--white);
+  background:
+    linear-gradient(135deg, rgba(89, 96, 68, 0.96), rgba(113, 55, 33, 0.94)),
+    url("https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1400&q=82")
+      center / cover;
+}
+
+.visit-snapshot .day {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.visit-snapshot dl {
+  display: grid;
+  gap: 16px;
+  margin: 0;
+}
+
+.visit-snapshot div {
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.visit-snapshot dt {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.visit-snapshot dd {
+  margin: 4px 0 0;
+  color: var(--white);
+  font-weight: 800;
+}
+
 .page-grid,
-.page-route-grid {
+.page-route-grid,
+.page-feature-grid {
   display: grid;
   gap: 14px;
 }
@@ -119,6 +188,26 @@
 
 .page-card p {
   color: var(--muted);
+}
+
+.page-feature-copy {
+  margin-bottom: 0;
+}
+
+.page-feature-copy p {
+  max-width: 560px;
+  color: var(--muted);
+}
+
+.page-feature-card {
+  min-height: 100%;
+}
+
+.page-feature-wide {
+  background:
+    linear-gradient(rgba(255, 250, 243, 0.9), rgba(255, 250, 243, 0.94)),
+    url("https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&w=1400&q=82")
+      center / cover;
 }
 
 .page-card .day,
@@ -137,8 +226,33 @@
   gap: 18px;
 }
 
+.page-address-spotlight {
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid rgba(39, 28, 22, 0.09);
+  border-radius: 8px;
+  box-shadow: 0 10px 32px rgba(39, 28, 22, 0.06);
+}
+
+.page-address-copy {
+  display: grid;
+  align-content: start;
+  gap: 18px;
+}
+
 .page-address .location-map {
+  height: 100%;
+  min-height: 300px;
   margin-bottom: 0;
+}
+
+.page-map-card {
+  min-height: 320px;
+}
+
+.page-hour-card {
+  display: grid;
+  gap: 4px;
 }
 
 .page-list {
@@ -158,6 +272,83 @@
   box-shadow: 0 10px 32px rgba(39, 28, 22, 0.06);
 }
 
+.page-soft-card {
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.page-soft-card h2 {
+  font-size: clamp(1.8rem, 7vw, 3.8rem);
+}
+
+.page-soft-emphasis {
+  color: var(--white);
+  background:
+    linear-gradient(135deg, rgba(89, 96, 68, 0.94), rgba(113, 55, 33, 0.9));
+}
+
+.page-soft-emphasis h3,
+.page-soft-emphasis p {
+  color: var(--white);
+}
+
+.page-soft-emphasis .day {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.page-timeline {
+  position: relative;
+  display: grid;
+  gap: 14px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.page-timeline::before {
+  position: absolute;
+  top: 22px;
+  bottom: 22px;
+  left: 22px;
+  width: 2px;
+  content: "";
+  background: rgba(161, 79, 53, 0.22);
+}
+
+.page-timeline li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(39, 28, 22, 0.09);
+  border-radius: 8px;
+  box-shadow: 0 10px 32px rgba(39, 28, 22, 0.06);
+}
+
+.page-timeline span {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  color: var(--white);
+  background: var(--clay);
+  border-radius: 50%;
+  font-weight: 900;
+}
+
+.page-timeline h3 {
+  margin-bottom: 5px;
+}
+
+.page-timeline p {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
 .page-route-card {
   position: relative;
   overflow: hidden;
@@ -173,6 +364,32 @@
   background: var(--gold);
 }
 
+.page-route-flow {
+  counter-reset: route;
+}
+
+.page-route-flow .page-card {
+  background: rgba(255, 250, 243, 0.95);
+}
+
+.build-panel {
+  padding: 28px;
+  color: var(--white);
+  background:
+    linear-gradient(135deg, rgba(28, 23, 20, 0.94), rgba(113, 55, 33, 0.9)),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1500&q=82")
+      center / cover;
+}
+
+.build-panel h2,
+.build-panel p {
+  color: var(--white);
+}
+
+.build-panel p {
+  color: rgba(255, 255, 255, 0.84);
+}
+
 .page-cta-panel {
   padding: 30px;
   background: var(--paper);
@@ -186,12 +403,38 @@
     padding: 96px 0;
   }
 
+  .page-intro-section {
+    margin-top: -58px;
+  }
+
+  .page-intro-layout {
+    grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+    align-items: stretch;
+  }
+
+  .page-intro-card {
+    padding: 42px;
+  }
+
+  .page-feature-layout {
+    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+    align-items: start;
+  }
+
   .page-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .page-feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .page-feature-wide {
+    grid-column: 1 / -1;
+  }
+
   .page-route-grid {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .page-address {
@@ -199,7 +442,45 @@
     align-items: start;
   }
 
+  .page-address-spotlight {
+    padding: 34px;
+  }
+
+  .page-duo,
+  .build-panel {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    align-items: stretch;
+  }
+
+  .page-soft-card {
+    padding: 34px;
+  }
+
+  .page-timeline {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+  }
+
+  .page-timeline::before {
+    display: none;
+  }
+
+  .page-timeline li {
+    grid-template-columns: 1fr;
+    align-content: start;
+  }
+
   .page-cta-panel {
     padding: 48px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-route-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .page-timeline {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 }
