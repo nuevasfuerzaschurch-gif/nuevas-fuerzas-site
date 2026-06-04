@@ -757,6 +757,56 @@
   line-height: 1.05;
 }
 
+.ready-location-detail {
+  display: grid;
+  row-gap: 2px;
+  justify-content: start;
+}
+
+.ready-map-preview {
+  position: relative;
+  display: grid;
+  width: 54px;
+  aspect-ratio: 1 / 1;
+  margin-left: 86px;
+  margin-bottom: -4px;
+  place-items: center;
+  overflow: hidden;
+  background:
+    linear-gradient(138deg, transparent 38%, rgba(83, 126, 166, 0.26) 39%, rgba(83, 126, 166, 0.26) 47%, transparent 48%),
+    linear-gradient(28deg, transparent 44%, rgba(216, 168, 93, 0.34) 45%, rgba(216, 168, 93, 0.34) 52%, transparent 53%),
+    linear-gradient(90deg, rgba(92, 155, 107, 0.16), transparent 48%),
+    #eef4ea;
+  border: 1px solid rgba(39, 28, 22, 0.12);
+  border-radius: 8px;
+}
+
+.ready-map-pin {
+  position: absolute;
+  top: 12px;
+  left: 22px;
+  width: 11px;
+  height: 11px;
+  background: #d64234;
+  border: 2px solid rgba(255, 255, 255, 0.92);
+  border-radius: 50% 50% 50% 0;
+  box-shadow: 0 4px 10px rgba(39, 28, 22, 0.24);
+  transform: rotate(-45deg);
+}
+
+.ready-map-label {
+  position: absolute;
+  left: 5px;
+  bottom: 5px;
+  padding: 2px 4px;
+  color: #4285f4;
+  background: rgba(255, 255, 255, 0.84);
+  border-radius: 4px;
+  font-size: 0.52rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
 .ready-location-link em {
   margin-top: 12px;
   color: var(--clay);
