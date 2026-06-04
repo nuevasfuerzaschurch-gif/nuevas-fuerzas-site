@@ -7,6 +7,8 @@ const pageForms = document.querySelectorAll("[data-page-form]");
 const smsForms = document.querySelectorAll("[data-sms-form]");
 const faqSelect = document.querySelector("[data-faq-select]");
 const faqAnswer = document.querySelector("[data-faq-answer]");
+const otherQuestionField = document.querySelector("[data-other-question-field]");
+const otherQuestionTextarea = otherQuestionField?.querySelector("textarea");
 
 const faqAnswers = {
   parking: "Encontrarás un amplio parqueadero al llegar a las instalaciones. Puedes estacionarte con comodidad antes del servicio.",
@@ -78,10 +80,31 @@ panelClosers.forEach((closer) => {
   });
 });
 
+const syncFaqQuestionField = () => {
+  if (!faqSelect || !faqAnswer) {
+    return;
+  }
+
+  const isOtherQuestion = faqSelect.value === "other";
+
+  faqAnswer.textContent = faqAnswers[faqSelect.value] || "Selecciona una pregunta frecuente para ver una respuesta breve.";
+
+  if (!otherQuestionField || !otherQuestionTextarea) {
+    return;
+  }
+
+  otherQuestionField.hidden = !isOtherQuestion;
+  otherQuestionTextarea.disabled = !isOtherQuestion;
+  otherQuestionTextarea.required = isOtherQuestion;
+
+  if (!isOtherQuestion) {
+    otherQuestionTextarea.value = "";
+  }
+};
+
 if (faqSelect && faqAnswer) {
-  faqSelect.addEventListener("change", () => {
-    faqAnswer.textContent = faqAnswers[faqSelect.value] || "Selecciona una pregunta frecuente para ver una respuesta breve.";
-  });
+  faqSelect.addEventListener("change", syncFaqQuestionField);
+  syncFaqQuestionField();
 }
 
 smsForms.forEach((form) => {
@@ -149,6 +172,8 @@ pageForms.forEach((form) => {
       if (faqAnswer) {
         faqAnswer.textContent = "Selecciona una pregunta frecuente para ver una respuesta breve.";
       }
+
+      syncFaqQuestionField();
 
       if (status) {
         status.textContent = "Gracias. Recibimos tu mensaje y nos comunicaremos contigo pronto.";
