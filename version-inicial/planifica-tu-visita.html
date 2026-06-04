@@ -215,18 +215,9 @@
               <span>Georgetown, Texas</span>
               <em>Ver ruta en Google Maps</em>
             </a>
-            <div class="ready-actions">
-              <button class="button button-primary" type="button" data-open-panel="visit-plan-form">
-                Planificar mi visita
-              </button>
-              <a class="button button-secondary-dark" href="#preguntas">Tengo una pregunta</a>
-            </div>
           </div>
-          <div class="page-form-panel" id="visit-plan-form" hidden data-form-panel>
-            <form class="page-contact-form" action="https://formsubmit.co/nuevasfuerzaschurch@gmail.com" method="POST" data-page-form>
-              <input type="hidden" name="_subject" value="Planificar visita - Nuevas Fuerzas" />
-              <input type="hidden" name="_template" value="table" />
-              <input type="hidden" name="_captcha" value="false" />
+          <div class="page-form-panel" id="visit-plan-form">
+            <form class="page-contact-form" action="sms:+17372005446" method="GET" data-sms-form>
               <label>
                 Nombre
                 <input name="name" type="text" autocomplete="name" required />
@@ -248,8 +239,7 @@
                 <textarea name="message" rows="4" placeholder="Cuéntanos si vienes con familia, niños o si necesitas orientación especial."></textarea>
               </label>
               <div class="page-form-actions page-form-wide">
-                <button class="button button-primary" type="submit">Enviar visita</button>
-                <button class="button button-secondary-dark" type="button" data-close-panel="visit-plan-form">Cerrar</button>
+                <button class="button button-primary" type="submit">Planificar mi visita</button>
               </div>
               <p class="page-form-status page-form-wide" data-form-status aria-live="polite"></p>
             </form>

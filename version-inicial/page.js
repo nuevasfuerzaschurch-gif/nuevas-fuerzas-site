@@ -4,6 +4,7 @@ const pageToggle = document.querySelector("[data-menu-toggle]");
 const panelTriggers = document.querySelectorAll("[data-open-panel]");
 const panelClosers = document.querySelectorAll("[data-close-panel]");
 const pageForms = document.querySelectorAll("[data-page-form]");
+const smsForms = document.querySelectorAll("[data-sms-form]");
 const faqSelect = document.querySelector("[data-faq-select]");
 const faqAnswer = document.querySelector("[data-faq-answer]");
 
@@ -82,6 +83,34 @@ if (faqSelect && faqAnswer) {
     faqAnswer.textContent = faqAnswers[faqSelect.value] || "Selecciona una pregunta frecuente para ver una respuesta breve.";
   });
 }
+
+smsForms.forEach((form) => {
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const status = form.querySelector("[data-form-status]");
+    const formData = new FormData(form);
+    const lines = [
+      "Hola Nuevas Fuerzas, quiero planificar mi visita.",
+      "",
+      `Nombre: ${formData.get("name") || ""}`,
+      `Correo: ${formData.get("email") || ""}`,
+      `Teléfono: ${formData.get("phone") || "No indicado"}`,
+      `Personas: ${formData.get("people") || "No indicado"}`,
+    ];
+    const message = formData.get("message");
+
+    if (message) {
+      lines.push(`Mensaje: ${message}`);
+    }
+
+    if (status) {
+      status.textContent = "Se abrirá tu aplicación de mensajes para enviar tu visita.";
+    }
+
+    window.location.href = `sms:+17372005446?body=${encodeURIComponent(lines.join("\n"))}`;
+  });
+});
 
 pageForms.forEach((form) => {
   form.addEventListener("submit", async (event) => {
