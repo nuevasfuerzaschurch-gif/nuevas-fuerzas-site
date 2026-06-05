@@ -472,14 +472,12 @@ h3 {
   gap: 34px;
 }
 
-.visit-steps,
 .schedule-list,
 .ministry-list {
   display: grid;
   gap: 12px;
 }
 
-.visit-steps article,
 .schedule-list article,
 .doctrine-grid article,
 .story-grid figure,
@@ -491,19 +489,28 @@ h3 {
   box-shadow: 0 10px 32px rgba(39, 28, 22, 0.06);
 }
 
-.visit-steps article {
-  padding: 22px;
-}
-
-.visit-steps span {
-  display: inline-block;
-  margin-bottom: 18px;
-  color: var(--clay);
-  font-weight: 900;
-}
-
 .schedule-section {
-  background: var(--soft);
+  background:
+    linear-gradient(90deg, rgba(247, 239, 225, 0.58), rgba(247, 239, 225, 0.22)),
+    linear-gradient(180deg, rgba(255, 250, 243, 0.12), rgba(247, 239, 225, 0.36)),
+    url("https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1800&q=82")
+      center / cover no-repeat;
+}
+
+.schedule-heading {
+  margin-left: 0;
+  max-width: 1040px;
+  text-align: left;
+  transform: none;
+}
+
+.schedule-heading-block {
+  margin-bottom: 28px;
+}
+
+.schedule-list {
+  display: grid;
+  gap: 14px;
 }
 
 .location-link {
@@ -535,10 +542,6 @@ h3 {
   display: grid;
   gap: 4px;
   padding: 20px;
-}
-
-.schedule-list + .visit-steps {
-  margin-top: 12px;
 }
 
 .day {
@@ -699,12 +702,89 @@ figcaption {
 }
 
 .ministry-list article {
+  position: relative;
+  overflow: hidden;
+  min-height: 260px;
+  display: grid;
+  grid-template-rows: minmax(58px, auto) 1fr;
+  align-content: start;
+  gap: 12px;
+  isolation: isolate;
   padding: 22px;
   border-left: 4px solid var(--gold);
 }
 
+.ministry-list .ministry-card {
+  color: var(--white);
+  background-color: rgba(28, 23, 20, 0.72);
+  background-position: center;
+  background-size: cover;
+}
+
+.ministry-card::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  content: "";
+  background:
+    linear-gradient(180deg, rgba(28, 23, 20, 0.66), rgba(28, 23, 20, 0.24) 48%, rgba(28, 23, 20, 0.32)),
+    linear-gradient(90deg, rgba(28, 23, 20, 0.44), transparent 70%);
+}
+
+.ministry-card h3,
+.ministry-card p {
+  position: relative;
+  z-index: 1;
+  color: var(--white);
+  text-shadow: 0 1px 14px rgba(12, 9, 7, 0.38);
+}
+
+.ministry-card h3 {
+  display: flex;
+  min-height: 58px;
+  align-items: flex-start;
+  margin: 0;
+  color: var(--white);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.35rem, 4vw, 1.85rem);
+  line-height: 1.08;
+}
+
+.ministry-card p {
+  align-self: start;
+  margin-bottom: 0;
+  max-width: 34rem;
+}
+
+.ministry-list .ministry-card-worship {
+  background-image: url("https://images.unsplash.com/photo-1660834772989-c15d049c35d7?auto=format&fit=crop&w=1200&q=82");
+}
+
+.ministry-list .ministry-card-discipleship {
+  background-image: url("https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=1200&q=82");
+}
+
+.ministry-list .ministry-card-youth {
+  background-image: url("https://images.unsplash.com/photo-1769755411779-e4c43e7b7742?auto=format&fit=crop&w=1200&q=82");
+}
+
+.ministry-list .ministry-card-marriage {
+  background-image: url("https://images.pexels.com/photos/1415131/pexels-photo-1415131.jpeg?auto=compress&cs=tinysrgb&w=1200");
+}
+
+.ministry-list .ministry-card-family {
+  background-image: url("https://images.unsplash.com/photo-1757215902821-f161660d4077?auto=format&fit=crop&w=1400&q=80");
+}
+
 .ministry-wide {
   grid-column: 1 / -1;
+}
+
+.ministry-note {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--ink);
+  font-weight: 800;
 }
 
 .ministries-section .family-panel {
@@ -876,11 +956,20 @@ figcaption {
     padding: 96px 0;
   }
 
+  .schedule-section {
+    padding: 84px 0;
+  }
+
   .visit-grid,
   .split,
   .family-panel {
     grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
     align-items: start;
+  }
+
+  .schedule-section .schedule-body > div:last-child {
+    align-self: start;
+    transform: none;
   }
 
   .doctrine-grid,
