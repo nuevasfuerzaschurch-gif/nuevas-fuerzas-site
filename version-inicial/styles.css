@@ -465,6 +465,13 @@ h3 {
   background: var(--paper);
 }
 
+.doctrine-section {
+  background:
+    linear-gradient(rgba(255, 250, 243, 0.42), rgba(255, 250, 243, 0.48)),
+    url("https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=1800&q=80")
+      center / cover no-repeat;
+}
+
 .visit-grid,
 .split,
 .family-panel {
@@ -565,14 +572,107 @@ time {
 }
 
 .doctrine-grid article {
+  min-height: 280px;
   padding: 24px;
+}
+
+.doctrine-card {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  align-content: end;
+  gap: 12px;
+  isolation: isolate;
+  color: var(--white);
+  background-color: rgba(28, 23, 20, 0.72);
+  background-position: center;
+  background-size: cover;
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+  will-change: transform;
+}
+
+.doctrine-card::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  content: "";
+  background:
+    linear-gradient(180deg, rgba(28, 23, 20, 0.18), rgba(28, 23, 20, 0.48) 42%, rgba(28, 23, 20, 0.78)),
+    linear-gradient(90deg, rgba(28, 23, 20, 0.5), rgba(28, 23, 20, 0.12));
+}
+
+.doctrine-card:hover {
+  border-color: rgba(216, 168, 93, 0.52);
+  box-shadow: 0 18px 44px rgba(39, 28, 22, 0.16);
+  transform: translateY(-6px);
+}
+
+.doctrine-card .doctrine-symbol,
+.doctrine-card h3,
+.doctrine-card p {
+  position: relative;
+  z-index: 1;
+  color: var(--white);
+  text-shadow: 0 1px 14px rgba(12, 9, 7, 0.46);
+}
+
+.doctrine-card h3 {
+  max-width: 34rem;
+  margin-bottom: 10px;
+  color: var(--white);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.35rem, 4vw, 1.85rem);
+  line-height: 1.08;
+}
+
+.doctrine-card p {
+  align-self: start;
+  max-width: 36rem;
+  margin-bottom: 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.doctrine-card-wide {
+  grid-column: 1 / -1;
 }
 
 .doctrine-symbol {
   display: inline-flex;
-  margin-bottom: 20px;
+  margin-bottom: 4px;
   color: var(--gold);
   font-size: 1.6rem;
+}
+
+.doctrine-card-god {
+  background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=82");
+}
+
+.doctrine-card-christ {
+  background-image: url("https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=1400&q=82");
+}
+
+.doctrine-card-spirit {
+  background-image: url("https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1400&q=82");
+}
+
+.doctrine-card-bible {
+  background-image: url("https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=1400&q=82");
+}
+
+.doctrine-card-salvation {
+  background-image: url("https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&w=1400&q=82");
+}
+
+.doctrine-card-return {
+  background-image: url("https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1400&q=82");
+}
+
+.doctrine-card-foursquare {
+  background-image: url("https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1600&q=82");
 }
 
 .stories-section {
@@ -994,7 +1094,7 @@ figcaption {
   }
 
   .doctrine-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .story-grid {
