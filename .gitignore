@@ -3,4 +3,6 @@
 .env.*
 .vercel/
 dist/
+dist 2/
 node_modules/
+.npm-cache/
